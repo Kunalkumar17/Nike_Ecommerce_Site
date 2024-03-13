@@ -16,8 +16,8 @@ const handleClick = () => {
         `}
         onClick={handleClick}
         > 
-        <div className="flex justify-center items-center bg-card bg-center bg-cover w-40 h-40 max-sm:w-32 max-sm:h-32 rounded-full object-contain"> 
-          <img src={imgURL.bigShoe} width={127} height={90} className=" object-contain max-sm:w-[60%] hover:w-[137px] max-sm:hover:w-[70%]"/>
+        <div className="flex justify-center items-center bg-card bg-center bg-cover w-40 h-40y rounded-full object-contain"> 
+          <img src={imgURL.bigShoe} width={127} height={90} className=" object-contain "/>
         </div>
     </div>
   )

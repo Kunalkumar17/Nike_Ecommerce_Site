@@ -18,7 +18,7 @@ const ProductDetailsPage = ( {imgURL , name , price , sizes}) => {
                 <p className='font-montserrat text-slate-black mt-3 font-bold' >MRP: {price}</p>
                 <p className='text-slate-gray font-palanquin'>Incl. of taxes</p>                    
                 <h1 className=' mt-4 font-bold'>Select Size</h1>
-                <div className=' mt-4 ml-[-5px] gap-2 grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2'>
+                <div className=' mt-4 ml-[-5px] grid  md:grid-cols-5 sm:grid-cols-3 grid-cols-2'>
                     {sizes.map((size) => (
                         <div className=''> 
                             <Size size={size} />  

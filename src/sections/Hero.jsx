@@ -37,7 +37,7 @@ const Hero = () => {
         <img src={bigShoeImg} alt='shoe collection' width={610} height={500}
         className='z-10 relative object-contain'/>
 
-      <div className='flex sm:gap-6 gap-4 absolute -bottom-[5%] px-6'>
+      <div className='flex sm:gap-6 gap-4 absolute -bottom-[5%] px-6 md'>
         {shoes.map((shoe) => (
           <div key={shoe}>
             <ShoeCard 

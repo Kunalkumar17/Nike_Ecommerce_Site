@@ -16,8 +16,8 @@ const handleClick = () => {
         `}
         onClick={handleClick}
         > 
-        <div className="flex justify-center items-center bg-card bg-center bg-cover w-40 h-40 rounded-full object-contain"> 
-          <img src={imgURL.bigShoe} width={127} height={90} className=" object-contain "/>
+        <div className="flex justify-center items-center bg-card bg-center bg-cover w-40 h-40 max-sm:w-28 max-sm:h-28 rounded-full object-contain"> 
+          <img src={imgURL.bigShoe} width={100} height={90} className=" object-contain max-sm:w-[80px] max-sm:h-[70px]"/>
         </div>
     </div>
   )

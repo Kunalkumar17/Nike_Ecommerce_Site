@@ -33,7 +33,7 @@ const Hero = () => {
             ))}
           </div>
       </div>
-      <div className='mt-2 relative flex justify-center items-center xl:min-h-screen max-xl:py-40' >
+      <div className='mt-2 relative flex justify-center items-center xl:min-h-screen max-xl:py-40 object-contain' >
         <img src={bigShoeImg} alt='shoe collection' width={610} height={500}
         className='z-10 relative object-contain'/>
 

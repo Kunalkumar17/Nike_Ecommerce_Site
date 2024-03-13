@@ -1,6 +1,7 @@
 import React from 'react'
 import { products } from '../constants'
 import PopularProductCard from '../components/PopularProductCard'
+import { Link } from 'react-router-dom'
 
 const PopularProducts = () => {
   return (
@@ -10,11 +11,13 @@ const PopularProducts = () => {
         <p className='lg:max-w-lg font-montserrat text-slate-gray'>Experience top-notch quality and style with our sought-after selections. Discover a world of comfort, design, and value</p>
       </div>
 
-    <div className='mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-2 sm:gap-4 gap-14'>
-      {products.map((product) => (
-        <PopularProductCard key={product.name} {...product} />
-      ))}
-    </div>
+      <div className='mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-2 sm:gap-4 gap-14'>
+        {products.map((product) => (
+          <Link to={`product-detail/${product.name}`}>
+            <PopularProductCard key={product.name} {...product} />
+          </Link>
+        ))}
+      </div>
 
     </section>
   )

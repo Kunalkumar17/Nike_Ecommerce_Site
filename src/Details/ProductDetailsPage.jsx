@@ -7,7 +7,7 @@ const ProductDetailsPage = ( {imgURL , name , price , sizes}) => {
   return (
     <main className='relative'>
         <Nav />
-        <section id='home' className='padding-x pt-10 pb-8'>
+        <section id className='padding-x pt-10 pb-8'>
             <SizeInfo imgURL={imgURL} name = {name} price={price} sizes={sizes} />
         </section>
         <section

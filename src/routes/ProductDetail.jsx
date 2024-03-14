@@ -12,7 +12,9 @@ export async function loader({ params }) {
 const ProductDetail = (params) => {
   const { ProductName } = useLoaderData();
   return (
-    <ProductDetailsPage {...ProductName} />
+    <div id=''>
+      <ProductDetailsPage {...ProductName} />
+    </div>
   )
 }
 

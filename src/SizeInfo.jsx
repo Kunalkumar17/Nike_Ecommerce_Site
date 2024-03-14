@@ -25,7 +25,7 @@ export const SizeInfo = ({imgURL , name , price , sizes}) => {
                 <p className='font-montserrat text-slate-black mt-3 font-bold leading-3' >MRP: {price}</p>
                 <p className='text-slate-gray font-palanquin'>Incl. of taxes</p>                    
                 <h1 className=' mt-4 font-bold'>Select Size</h1>
-                <div className=' mt-4 grid xl:grid-cols-7 md:grid-cols-4 sm:grid-cols-4 max-sm:grid-col-2 grid-cols-2 '>
+                <div className=' mt-4 grid xl:grid-cols-7 md:grid-cols-4 grid-cols-3  '>
                     {sizes.map((size) => (
                         <div > 
                             <Size size={size} />  

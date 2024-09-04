@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
 
-    const [ user , setUser ] = useState('')
-    const [ logInlink , setLogInlink ] = useState('')
-    const [ signUp , setSignUp ] = useState('')
-    const [ SignInlink , setSignInlink ] = useState('')
+    const [ user , setUser ] = useState('LogIn')
+    const [ logInlink , setLogInlink ] = useState('/login')
+    const [ signUp , setSignUp ] = useState('SignUp')
+    const [ SignInlink , setSignInlink ] = useState('/signup')
     const getUser = async() => {
         const res = await fetch('http://localhost:3000/' , {
             method: 'GET',

@@ -26,7 +26,7 @@ const Hero = () => {
 
           <div className='flex justify-start items-start flex-wrap w-full mt-10 gap-16'>
             {statistics.map( (stat , index) =>(
-              <div >
+              <div key={index}>
                 <p className=' font-palanquin font-bold text-3xl'>{stat.value}</p>
                 <p className='leading-7 text-slate-gray font-montserrat'>{stat.label}</p>
               </div>

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { arrowRight } from "./assets/icons"
 import Button from "./components/Button"
 import { Size } from "./components/Size"
 
@@ -25,13 +24,6 @@ export const SizeInfo = ({imgURL , name , price , sizes}) => {
                 <p className='font-montserrat text-slate-black mt-3 font-bold leading-3' >MRP: {price}</p>
                 <p className='text-slate-gray font-palanquin'>Incl. of taxes</p>                    
                 <h1 className=' mt-4 font-bold'>Select Size</h1>
-                <div className=' mt-4 grid xl:grid-cols-7 md:grid-cols-4 grid-cols-3  '>
-                    {sizes.map((size) => (
-                        <div > 
-                            <Size size={size} />  
-                        </div>                            
-                    ))}
-                </div>
                 <div className='mt-4 w-full flex gap-2 max-sm:flex-col pb-10'>
                     <Button label='Add to Bag'
                     backgroundColor={`bg-white`}

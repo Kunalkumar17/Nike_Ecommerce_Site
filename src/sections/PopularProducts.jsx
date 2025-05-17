@@ -1,9 +1,15 @@
-import React from 'react'
-import { products } from '../constants'
+import React, { useContext, useEffect, useState } from 'react'
 import PopularProductCard from '../components/PopularProductCard'
-import { Link } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 
 const PopularProducts = () => {
+
+  const { products } = useContext(ShopContext)
+  const [productData , setProductData] = useState([]);
+  useEffect(() => {
+    const data = products.slice(0,4);
+    setProductData(data)
+  }, [products])
   return (
     <section id='products' className='max-container max-sm:mt-12'>
       <div className='flex flex-col justify-start gap-5'>
@@ -11,10 +17,10 @@ const PopularProducts = () => {
         <p className='lg:max-w-lg font-montserrat text-slate-gray'>Experience top-notch quality and style with our sought-after selections. Discover a world of comfort, design, and value</p>
       </div>
 
-      <div className='mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-2 sm:gap-4 gap-14'>
-        {products.map((product) => (
-          <a href={`product-detail/${product.name}`} key={product.name}>
-            <PopularProductCard key={product.name} {...product} />
+      <div className='mt-5 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-2 sm:gap-4 gap-14'>
+        {productData.map((product) => (
+          <a href={`product-detail/${product._id}`} key={product._id}>
+            <PopularProductCard {...product} />
           </a>
         ))}
       </div>

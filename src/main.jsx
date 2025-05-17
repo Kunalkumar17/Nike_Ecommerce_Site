@@ -10,8 +10,14 @@ import ErrorPage from './components/ErrorPage.jsx';
 import ProductDetail from './routes/ProductDetail.jsx';
 import SignUp from './routes/SignUp.jsx';
 import Login from './routes/login.jsx';
-import { loader as ProductDetailLoader } from './routes/ProductDetail.jsx';
 import Logout from './components/Logout.jsx';
+import Collection from './routes/Collection.jsx';
+import ShopContextProvider from './context/ShopContext.jsx';
+import { ToastContainer } from 'react-toastify';
+import { Cart } from './routes/Cart.jsx';
+import { PlaceOrder } from './routes/PlaceOrder.jsx';
+import Orders from './routes/Orders.jsx';
+import Verify from './routes/Verify.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,9 +26,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/product-detail/:name",
+    path: "/product-detail/:productID",
     element: <ProductDetail />,
-    loader: ProductDetailLoader,
   },
   {
     path: '/signup',
@@ -35,11 +40,34 @@ const router = createBrowserRouter([
   {
     path: '/logout',
     element: <Logout />
+  },
+  {
+    path: '/collection',
+    element: <Collection/>
+  },
+  {
+    path: '/cart',
+    element: <Cart />
+  },
+  {
+    path: '/place-order',
+    element: <PlaceOrder/>
+  },
+  {
+    path: '/orders',
+    element: <Orders />
+  },
+  {
+    path: '/verify',
+    element: <Verify />
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <RouterProvider router={router} />
+    <ShopContextProvider >
+      <ToastContainer/>
+      <RouterProvider router={router} />
+    </ShopContextProvider>
   </>,
 )

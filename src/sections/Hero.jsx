@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section id='home' className='xl:flex justify-center min-h-screen gap-10 max-container'
     >
-      <div className='relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28'>
+      <div className='relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x'>
         <p className='pt-10 text-xl font-montserrat text-coral-red'>Our Summer Collection</p>
         <h1 className='mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
           <span className=' xl:bg-transparent xl:whitespace-nowrap relative z-10 pr-10 shadow-inherit'>The New Arrival</span>
@@ -33,11 +33,11 @@ const Hero = () => {
             ))}
           </div>
       </div>
-      <div className='mt-2 relative flex justify-center items-center xl:min-h-screen max-xl:py-40 object-contain' >
+      <div className=' relative flex justify-center items-center xl:min-h-screen max-xl:py-40 object-contain' >
         <img src={bigShoeImg} alt='shoe collection' width={610} height={500}
         className='z-10 relative object-contain'/>
 
-      <div className='flex sm:gap-6 gap-4 absolute -bottom-[5%] px-6 md'>
+      <div className='flex sm:gap-6 gap-4 absolute -bottom-[12%] px-6'>
         {shoes.map((shoe) => (
           <div key={shoe}>
             <ShoeCard 

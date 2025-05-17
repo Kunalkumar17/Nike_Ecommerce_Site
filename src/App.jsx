@@ -7,9 +7,10 @@ SpecialOffer,
 Subscribe,
 SuperQuality} from './sections'
 import Nav from './components/Nav';
+export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-const App = () => (
-  <main className="relative">
+const App = () => (  
+  <main>
     <Nav/>
     <section
     className="
@@ -37,7 +38,7 @@ const App = () => (
       <CustomerReviews/>
     </section>
     <section
-    className="padding-x sm:py-32 p-16 w-full">
+    className="padding-x w-full">
       <Subscribe/>
     </section>
     <section

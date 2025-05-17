@@ -4,8 +4,8 @@ import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className='max-container'>
-      <div className='flex justify-between items-start gap-20 flex-wrap max-lg:flex-col'>
+    <footer className='max-container bg-black pt-4'>
+      <div className='flex justify-between items-start gap-20 flex-wrap max-lg:flex-col mx-10'>
         <div className='flex flex-col items-start'>
           <a href='/'>
             <img

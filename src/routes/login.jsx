@@ -3,6 +3,8 @@ import Nav from "../components/Nav";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Footer } from "../sections";
 import { backendUrl } from "../App";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 function Login() {
 
@@ -35,6 +37,27 @@ function Login() {
         catch(err){
         }
     };
+
+    const isLoggedIn = async() => {
+        try {
+            const response = await fetch(backendUrl+ '/check' , {
+                method: 'POST',
+                credentials: 'include',
+            })
+            const data = await response.json()
+            console.log(data)
+            if( data === "Success"){
+                navigate('/')
+                toast.success('Already Logged In')
+            }
+        } catch (error) {
+            
+        }
+    }
+
+    useEffect(() => {
+        isLoggedIn()
+    }, [])
 
     return (
         <div>

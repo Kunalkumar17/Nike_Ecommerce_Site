@@ -10,19 +10,6 @@ const Nav = () => {
   const [visible, setVisible] = useState(false)
   const { setShowSearch, getCartCount } = useContext(ShopContext)
 
-  const renderUserDropdown = () => (
-    <div className="group relative inline-block">
-      <img className="w-5 cursor-pointer" src={user} alt="user-icon" width={22} height={22} />
-      <div className="group-hover:block hidden absolute z-50 pt-6">
-        <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded shadow-lg">
-          <NavLink to="/Profile" className="cursor-pointer hover:text-black">My Profile</NavLink>
-          <NavLink to="/orders" className="cursor-pointer hover:text-black">Orders</NavLink>
-          <NavLink to="/logout" className="cursor-pointer hover:text-black">Logout</NavLink>
-        </div>
-      </div>
-    </div>
-  )
-
   return (
     <div>
       {/* Top links (Join/Sign In) */}
@@ -83,7 +70,7 @@ const Nav = () => {
               />
               <div className="group-hover:block hidden absolute z-50 pt-6">
                 <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded shadow-lg">
-                  <NavLink to="/Profile" className="cursor-pointer hover:text-black">My Profile</NavLink>
+                  <NavLink to="" className="cursor-pointer hover:text-black">My Profile</NavLink>
                   <NavLink to="/orders" className="cursor-pointer hover:text-black">Orders</NavLink>
                   <NavLink to="/logout" className="cursor-pointer hover:text-black">Logout</NavLink>
                 </div>

@@ -31,6 +31,8 @@ const ShopContextProvider = (props) => {
     cartData[itemID] = { [size]: 1 };
   }
 
+  setCartItems(cartData);
+
   try {
     const response = await fetch(backendUrl + '/cart/add', {
       method: 'POST',
@@ -49,8 +51,7 @@ const ShopContextProvider = (props) => {
       return;
     }
 
-    toast.success('Added to cart');
-    setCartItems(cartData); // Only update local cart if server call succeeds
+    toast.success('Added to cart'); // Only update local cart if server call succeeds
 
   } catch (error) {
     console.error("Add to cart error:", error);

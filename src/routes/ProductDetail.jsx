@@ -54,12 +54,12 @@ const ProductDetail = () => {
               <div className='w-full sm:sticky sm:top-10 h-fit flex sm:flex-row flex-col gap-3'>
                 <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
                   {productData.image.map((item, index) => (
-                    <img onClick={() => setImage(item)} src={item} key={index} className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer' alt="" />
+                    <img onMouseEnter={() => setImage(item)} src={item} key={index} className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer rounded-md hover:contrast-[.7]' alt="" />
                   ))
                   }
                 </div>
                 <div className="w-full sm:w-[80%] h-fit">
-                  <img src={image} alt="" className="w-full h-auto" />
+                  <img src={image} alt="" className="w-full h-auto rounded-md"/>
                 </div>
               </div>
             </div>
@@ -74,12 +74,11 @@ const ProductDetail = () => {
                 <h1 className=' mt-4 font-medium text-lg'>Select Size</h1>
                 <div className='gap-2 lg:grid-cols-2 grid-cols-3 grid md:w-2/3 w-full'>
                   {productData.sizes.map((item, index) => (
-                    <button onClick={() => setSize(item)} key={index} className={`border py-2 px-4 ${item === size ? 'border-black' : ''}`}>{item}</button>
+                    <button onClick={() => setSize(item)} key={index} className={`hover:border-black border py-2 px-4 ${item === size ? 'border-black' : ''}`}>{item}</button>
                   ))}
                 </div>
               </div>
-              <button className='bg-black text-white px-8 py-4 text-sm sm:w-2/3 w-full rounded-3xl hover:bg-gray-900'>Buy Now</button>
-              <button onClick={() => addToCart(productData._id, size)} className='border border-gray-300 px-8 py-4 text-sm sm:w-2/3 w-full rounded-3xl hover:border-black mt-3'>Add To Cart</button>
+              <button onClick={() => addToCart(productData._id, size)} className='bg-black text-white px-8 py-4 text-sm sm:w-2/3 w-full rounded-3xl hover:bg-gray-900'>Add To Cart</button>
               <hr className='mt-8 sm:w-4/5' />
               <p className=" text-wrap text-xl flex mt-4 sm:w-4/5">We didn't invent the remix—but considering the material we get to sample, this one's a no-brainer. We took elements from the AJ6, 7 and 8, making them into a completely new shoe that celebrates MJ's first 3-peat championship run. With leather, textile and nubuck details, these sneakers honour one legacy while encouraging you to cement your own.</p>
               <ul className="text-xl mt-10">

@@ -72,9 +72,9 @@ const ProductDetail = () => {
                 (Also includes all applicable duties)</p>
               <div className='flex flex-col gap-4 my-8'>
                 <h1 className=' mt-4 font-medium text-lg'>Select Size</h1>
-                <div className='gap-2 lg:grid-cols-2 grid-cols-3 grid md:w-2/3 w-full'>
+                <div className='gap-2 lg:grid-cols-3 grid-cols-2 grid md:w-2/3 w-full'>
                   {productData.sizes.map((item, index) => (
-                    <button onClick={() => setSize(item)} key={index} className={`hover:border-black border py-2 px-4 ${item === size ? 'border-black' : ''}`}>{item}</button>
+                    <button onClick={() => setSize(item)} key={index} className={`rounded-md hover:border-black border py-2 px-4 ${item === size ? 'border-black' : ''}`}>{item}</button>
                   ))}
                 </div>
               </div>

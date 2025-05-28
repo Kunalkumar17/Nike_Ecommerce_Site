@@ -103,6 +103,7 @@ export const PlaceOrder = () => {
 
                     if(data === 'Order Placed'){
                         navigate('/orders')
+                        toast.success('Order Placed')
                     }
                     else {
                         toast.error(data)

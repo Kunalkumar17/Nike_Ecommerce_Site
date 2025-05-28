@@ -12,11 +12,13 @@ function Login() {
     const [password , setPassword] = useState('');
     const [emailError , setemailError] = useState('');
     const [passwordError , setpasswordError] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate()
 
     const handleSubmit =  async(e) => {
      e.preventDefault();
      setemailError('');
+     setLoading(true);
         setpasswordError('');
         try {
             const res = await fetch(backendUrl+'/login' , {
@@ -79,7 +81,22 @@ function Login() {
                     </div>
 
                     <div className="flex justify-center">
-                        <button type="submit" className="bg-black px-6 py-2 text-white rounded-none hover:bg-gray-600">Log In</button>
+                        <button
+                    type="submit"
+                    className="bg-black p-2 text-white rounded-lg w-full mt-2 hover:cursor-pointer disabled:opacity-50"
+                    disabled={loading}
+                >
+                    {loading ? (
+                        <span className="flex items-center justify-center gap-2">
+                            <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3.5-3.5L12 0v4a8 8 0 00-8 8z"></path>
+                            </svg>
+                        </span>
+                    ) : (
+                        'Log In'
+                    )}
+                </button>
                     </div>
                     
                 </form> 

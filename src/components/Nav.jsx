@@ -5,6 +5,7 @@ import { hamburger, search_icon, shopping_bag, user } from '../assets/icons'
 import { navLinks } from '../constants'
 import { ShopContext } from '../context/ShopContext'
 import SearchBar from './SearchBar'
+const admin_url = import.meta.env.VITE_ADMIN_URL;
 
 const Nav = () => {
   const [visible, setVisible] = useState(false)
@@ -49,6 +50,9 @@ const Nav = () => {
                 <hr className="w-2/4 h-[1px] bg-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </li>
             ))}
+            <li className='font-palanquin text-sm text-gray-600 border px-3 py-1 border-gray-600 rounded-full bg-white cursor-pointer'>
+              <Link to={admin_url} target="_blank">Admin Panel</Link>
+            </li>
           </ul>
 
           {/* Icons - Desktop */}

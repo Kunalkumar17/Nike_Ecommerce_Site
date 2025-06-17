@@ -47,13 +47,14 @@ function Login() {
                 credentials: 'include',
             })
             const data = await response.json()
-            console.log(data)
             if( data === "Success"){
                 navigate('/')
                 toast.success('Already Logged In')
             }
         } catch (error) {
-            
+            console.log(error)
+        } finally {
+            setLoading(false); // Stop loading
         }
     }
 

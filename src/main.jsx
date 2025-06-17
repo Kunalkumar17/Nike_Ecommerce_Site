@@ -66,8 +66,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <ShopContextProvider >
-      <ToastContainer/>
-      <RouterProvider router={router} />
+        <ToastContainer/>
+        <RouterProvider router={router} />
     </ShopContextProvider>
   </>,
 )

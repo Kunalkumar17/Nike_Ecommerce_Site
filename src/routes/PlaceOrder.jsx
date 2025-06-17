@@ -12,6 +12,7 @@ export const PlaceOrder = () => {
     const navigate = useNavigate()
     const {backendUrl , cartItems  , getCartAmount , delivery_fee, products } = useContext(ShopContext)
     const [method , setMethod] = useState('COD')
+    const [loading ,setLoading] = useState(false)
     const [formData , setFormData] = useState({
         firstName:'',
         lastName:'',
@@ -66,6 +67,7 @@ export const PlaceOrder = () => {
 
     const onSubmitHandler = async(event) =>{
         event.preventDefault();
+        setLoading(true)
 
         try {
             
@@ -153,6 +155,8 @@ export const PlaceOrder = () => {
 
         } catch (error) {
             console.log(error)
+        } finally {
+            setLoading(false); // Stop loading
         }
     }
   return (
@@ -208,7 +212,22 @@ export const PlaceOrder = () => {
                             </div>
                         </div>
                         <div className='w-full text-end mt-8'>
-                            <button type='submit' className='border text-white bg-black px-16 py-3 text-sm'>PLACE ORDER</button>
+                            <button
+                    type="submit"
+                    className="bg-black p-2 text-white rounded-lg w-1/2 mt-2 hover:cursor-pointer disabled:opacity-50"
+                    disabled={loading}
+                >
+                    {loading ? (
+                        <span className="flex items-center justify-center gap-2">
+                            <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3.5-3.5L12 0v4a8 8 0 00-8 8z"></path>
+                            </svg>
+                        </span>
+                    ) : (
+                        'PLACE ORDER'
+                    )}
+                </button>
                         </div>
                     </div>
                 </div>

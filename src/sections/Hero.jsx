@@ -4,6 +4,7 @@ import { arrowRight } from '../assets/icons'
 import { shoes, statistics } from '../constants'
 import { bigShoe1, bigShoe2, bigShoe3 } from '../assets/images'
 import { ShoeCard } from '../components/ShoeCard'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe3)
@@ -24,7 +25,10 @@ const Hero = () => {
           Discover stylish Nike arrivals, quality comfort, and innovation for your active life.
         </p>
 
-        <Button label='Shop Now' iconURL={arrowRight} />
+        <Link to={'/collection'} className='flex gap-1 items-center border border-black px-6 py-3 rounded-full font-medium hover:bg-coral-red'>
+          Shop Now
+          <img src={arrowRight} alt="arrowRight" />
+        </Link>
 
         <div className='flex justify-start items-start flex-wrap w-full mt-10 gap-16'>
           {statistics.map((stat, index) => (
